@@ -1,4 +1,6 @@
-# NgxEditorCuscom
+# NgxEditorCustom
+
+
 
 ## Fix problem with build
 ```

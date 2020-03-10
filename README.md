@@ -16,20 +16,18 @@
 Install via Package managers such as [npm][npm] or [yarn][yarn]
 
 ```bash
-npm install ngx-editor --save
-# or
-yarn add ngx-editor
+npm install ngx-editor-custom --save
 ```
 
 ### Usage
 
-Import `ngx-editor` module
+Import `ngx-editor-custom` module
 
 ```typescript
-import { NgxEditorModule } from 'ngx-editor';
+import { NgxEditorCustomModule } from 'ngx-editor-custom';
 
 @NgModule({
-  imports: [ NgxEditorModule ]
+  imports: [ NgxEditorCustomModule ]
 })
 ```
 
@@ -38,17 +36,15 @@ Import [font-awesome](https://github.com/FortAwesome/Font-Awesome) into your app
 Then in HTML
 
 ```html
-<app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
+<app-ngx-editor-custom [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor-custom>
 ```
 
 For `ngModel` to work, You must import `FormsModule` from `@angular/forms`
 
 #### PeerDependencies
 
-`ngx-editor` depeneds on the following libraries to work.
+`ngx-editor-custom` depeneds on the following libraries to work.
 
-* [Font-Awesome v4.7.0](https://github.com/FortAwesome/Font-Awesome/tree/fa-4)
-* [Ngx-Bootstrap](https://github.com/valor-software/ngx-bootstrap)
 
 ## Compatibility
 
@@ -58,7 +54,3 @@ All Evergreen-Browsers are supported
 * Microsoft Edge
 * Mozilla Firefox
 * Opera
-
-## Demo
-
-Demo at stackblitz [ngx-editor](https://ngx-editor.stackblitz.io/)

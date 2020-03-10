@@ -4,7 +4,9 @@
 ```
 # npm i
 # npm rebuild node-sass 
-
+# npm uninstall -g angular-cli @angular/cli
+# npm cache clean --force
+# npm install -g @angular/cli@6
 ```
 
 ### Installation

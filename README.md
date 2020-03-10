@@ -1,27 +1,11 @@
-# NgxEditor
+# NgxEditorCuscom
 
-<p align="center">
-  <a href="https://github.com/sibiraj-s/ngx-editor">
-   <img src="https://raw.githubusercontent.com/sibiraj-s/ngx-editor/master/src/assets/icons/ngx-editor.png" alt="ngxEditor">
-  </a>
-</p>
-<p align="center">A Simple WYSIWYG Editor for Angular 6 Applications.</p>
-<p align="center">
-  <a href="https://travis-ci.org/sibiraj-s/ngx-editor">
-    <img alt="Build Status" src="https://travis-ci.org/sibiraj-s/ngx-editor.svg?branch=master">
-  </a>
-  <a href="https://www.npmjs.com/package/ngx-editor">
-    <img alt="npm version" src="https://img.shields.io/npm/v/ngx-editor.svg">
-  </a>
-  <a href="https://www.npmjs.com/package/ngx-editor">
-    <img alt="npm" src="https://img.shields.io/npm/dm/ngx-editor.svg">
-  </a>
-  <a href="https://github.com/sibiraj-s/ngx-editor/blob/master/LICENSE">
-    <img alt="licence" src="https://img.shields.io/npm/l/ngx-editor.svg">
-  </a>
-</p>
+## Fix problem with build
+```
+# npm i
+# npm rebuild node-sass 
 
-## Getting Started
+```
 
 ### Installation
 
@@ -74,13 +58,3 @@ All Evergreen-Browsers are supported
 ## Demo
 
 Demo at stackblitz [ngx-editor](https://ngx-editor.stackblitz.io/)
-
-## Documentation
-
-Documentation is auto-generated using [compodoc][compodoc], and can be viewed here: [https://sibiraj-s.github.io/ngx-editor/](https://sibiraj-s.github.io/ngx-editor/)
-
-[npm]: https://www.npmjs.com/
-[yarn]: https://yarnpkg.com/lang/en/
-[github]: https://sibiraj-s.github.io/
-[wiki]:https://github.com/sibiraj-s/ngx-editor/wiki/ngxEditor
-[compodoc]: https://compodoc.github.io/website/

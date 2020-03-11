@@ -5,7 +5,7 @@ import { PopoverConfig } from 'ngx-bootstrap';
 import { CommandExecutorService } from '../common/services/command-executor.service';
 import { MessageService } from '../common/services/message.service';
 import * as Utils from '../common/utils/ngx-editor.utils';
-import { ColorEvent } from 'ngx-color';
+
 
 
 @Component({
@@ -16,6 +16,15 @@ import { ColorEvent } from 'ngx-color';
 })
 
 export class NgxEditorToolbarComponent implements OnInit {
+
+  constructor(private _popOverConfig: PopoverConfig,
+    private _formBuilder: FormBuilder,
+    private _messageService: MessageService,
+    private _commandExecutorService: CommandExecutorService) {
+    this._popOverConfig.outsideClick = true;
+    this._popOverConfig.placement = 'bottom';
+    this._popOverConfig.container = 'body';
+  }
   /** holds values of the insert link form */
   urlForm: FormGroup;
   /** holds values of the insert image form */
@@ -38,6 +47,8 @@ export class NgxEditorToolbarComponent implements OnInit {
   hexColor = '';
   /** show/hide image uploader */
   isImageUploader = false;
+  /** set array for drobdown fontSize text */
+  arrayFontSize = Array(99).fill(1).map((_, i) => i+2);
 
   /**
    * Editor configuration
@@ -53,14 +64,7 @@ export class NgxEditorToolbarComponent implements OnInit {
    */
   @Output() execute: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private _popOverConfig: PopoverConfig,
-    private _formBuilder: FormBuilder,
-    private _messageService: MessageService,
-    private _commandExecutorService: CommandExecutorService) {
-    this._popOverConfig.outsideClick = true;
-    this._popOverConfig.placement = 'bottom';
-    this._popOverConfig.container = 'body';
-  }
+  
 
   /**
    * enable or diable toolbar based on configuration
@@ -192,8 +196,6 @@ export class NgxEditorToolbarComponent implements OnInit {
     this.videoPopover.hide();
   }
   handleChange(event) {
-    console.log(event.color);
-    // debugger
     this.insertColor(event.color.hex);
   }
   /** inser text/background color */

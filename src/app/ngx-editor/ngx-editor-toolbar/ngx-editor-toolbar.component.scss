@@ -60,6 +60,23 @@
   }
 }
 
+.popoverSroll {
+  min-width: 40px;
+  margin: 0 -12px;
+  height: 100px;
+  overflow-y: scroll;
+  text-align: center;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar { width: 0; }
+  div{
+    &:hover {
+      background: #eee;
+      cursor: pointer;
+    }
+  }
+}
+
 ::ng-deep .popover {
   border-top-right-radius: 0;
   border-top-left-radius: 0;

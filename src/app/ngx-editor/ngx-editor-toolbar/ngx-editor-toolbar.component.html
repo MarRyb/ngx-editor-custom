@@ -244,27 +244,16 @@
 <!-- Insert color template -->
 <ng-template #insertColorTemplate>
   <color-sketch (onChange)="handleChange($event)"></color-sketch>
-  <!-- <div class="ngxe-popover imgc-ctnr">
-    <div class="imgc-topbar two-tabs">
-      <span (click)="selectedColorTab ='textColor'" [ngClass]="{active: selectedColorTab ==='textColor'}">Text</span>
-      <span (click)="selectedColorTab ='backgroundColor'" [ngClass]="{active: selectedColorTab ==='backgroundColor'}">Background</span>
-    </div>
-    <div class="imgc-ctnt is-color extra-gt1">
-      <form autocomplete="off">
-        <div class="form-group">
-          <label for="hexInput" class="small">Hex Color</label>
-          <input type="text" class="form-control-sm" id="hexInput" name="hexInput" maxlength="7" placeholder="HEX Color"
-            [(ngModel)]="hexColor" required>
-        </div>
-        <button type="button" class="btn-primary btn-sm btn" (click)="insertColor(hexColor, selectedColorTab)">Submit</button>
-      </form>
-    </div>
-  </div> -->
 </ng-template>
 
 <!-- font size template -->
 <ng-template #fontSizeTemplate>
-  <div class="ngxe-popover extra-gt1">
+  <div class="popoverSroll">
+    <div *ngFor="let item of arrayFontSize">
+      <span (click)="setFontSize(item)"> {{item}}</span>
+    </div>
+  </div>
+  <!-- <div class="ngxe-popover extra-gt1">
     <form autocomplete="off">
       <div class="form-group">
         <label for="fontSize" class="small">Font Size</label>
@@ -273,7 +262,7 @@
       </div>
       <button type="button" class="btn-primary btn-sm btn" (click)="setFontSize(fontSize)">Submit</button>
     </form>
-  </div>
+  </div> -->
 </ng-template>
 
 <!-- font family/name template -->

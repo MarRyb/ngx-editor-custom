@@ -178,15 +178,11 @@ export class CommandExecutorService {
    * @param color color to be inserted
    * @param where where the color has to be inserted either text/background
    */
-  insertColor(color: string, where: string): void {
+  insertColor(color: string): void {
     if (this.savedSelection) {
       const restored = Utils.restoreSelection(this.savedSelection);
       if (restored && this.checkSelection()) {
-        if (where === 'textColor') {
-          document.execCommand('foreColor', false, color);
-        } else {
-          document.execCommand('hiliteColor', false, color);
-        }
+        document.execCommand('foreColor', false, color);
       }
     } else {
       throw new Error('Range out of the editor');

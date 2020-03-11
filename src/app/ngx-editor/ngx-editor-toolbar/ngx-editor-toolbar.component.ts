@@ -5,6 +5,8 @@ import { PopoverConfig } from 'ngx-bootstrap';
 import { CommandExecutorService } from '../common/services/command-executor.service';
 import { MessageService } from '../common/services/message.service';
 import * as Utils from '../common/utils/ngx-editor.utils';
+import { ColorEvent } from 'ngx-color';
+
 
 @Component({
   selector: 'app-ngx-editor-toolbar',
@@ -189,11 +191,15 @@ export class NgxEditorToolbarComponent implements OnInit {
     /** close inset URL pop up */
     this.videoPopover.hide();
   }
-
+  handleChange(event) {
+    console.log(event.color);
+    // debugger
+    this.insertColor(event.color.hex);
+  }
   /** inser text/background color */
-  insertColor(color: string, where: string): void {
+  insertColor(color: string): void {
     try {
-      this._commandExecutorService.insertColor(color, where);
+      this._commandExecutorService.insertColor(color);
     } catch (error) {
       this._messageService.sendMessage(error.message);
     }

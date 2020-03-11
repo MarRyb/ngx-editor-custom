@@ -243,7 +243,8 @@
 
 <!-- Insert color template -->
 <ng-template #insertColorTemplate>
-  <div class="ngxe-popover imgc-ctnr">
+  <color-sketch (onChange)="handleChange($event)"></color-sketch>
+  <!-- <div class="ngxe-popover imgc-ctnr">
     <div class="imgc-topbar two-tabs">
       <span (click)="selectedColorTab ='textColor'" [ngClass]="{active: selectedColorTab ==='textColor'}">Text</span>
       <span (click)="selectedColorTab ='backgroundColor'" [ngClass]="{active: selectedColorTab ==='backgroundColor'}">Background</span>
@@ -258,7 +259,7 @@
         <button type="button" class="btn-primary btn-sm btn" (click)="insertColor(hexColor, selectedColorTab)">Submit</button>
       </form>
     </div>
-  </div>
+  </div> -->
 </ng-template>
 
 <!-- font size template -->

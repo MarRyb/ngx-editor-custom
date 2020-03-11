@@ -1,6 +1,6 @@
 {
-  "name": "ngx-editor",
-  "version": "4.1.0",
+  "name": "ngx-editor-custom",
+  "version": "1.0.0",
   "description": "WYSIWYG Editor for Angular Applications",
   "license": "MIT",
   "scripts": {
@@ -90,5 +90,8 @@
     "tslint": "~5.11.0",
     "typescript": "~2.9.2",
     "zone.js": "~0.8.26"
+  },
+  "dependencies": {
+    "ngx-color": "^5.0.1"
   }
 }

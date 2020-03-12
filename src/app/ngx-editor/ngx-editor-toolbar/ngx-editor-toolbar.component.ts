@@ -48,7 +48,7 @@ export class NgxEditorToolbarComponent implements OnInit {
   /** show/hide image uploader */
   isImageUploader = false;
   /** set array for drobdown fontSize text */
-  arrayFontSize = Array(99).fill(1).map((_, i) => i+2);
+  arrayFontSize = Array(99).fill(1).map((_, i) => i + 2);
 
   /**
    * Editor configuration
@@ -64,7 +64,7 @@ export class NgxEditorToolbarComponent implements OnInit {
    */
   @Output() execute: EventEmitter<string> = new EventEmitter<string>();
 
-  
+
 
   /**
    * enable or diable toolbar based on configuration

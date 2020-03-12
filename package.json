@@ -89,8 +89,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~2.9.2",
-    "zone.js": "~0.8.26",
-    "ngx-color": "^3.0.3"
+    "zone.js": "~0.8.26"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ngx-color": "^3.0.3"
+  }
 }

@@ -8,5 +8,6 @@
     "umdModuleIds": {
       "ngx-bootstrap": "ngx-bootstrap"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": ["."]
 }

@@ -19,6 +19,19 @@ export const ngxEditorConfig = {
     ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'indent', 'outdent'],
     ['cut', 'copy', 'delete', 'removeFormat', 'undo', 'redo'],
     ['paragraph', 'blockquote', 'removeBlockquote', 'horizontalLine', 'orderedList', 'unorderedList'],
-    ['link', 'unlink', 'image', 'video']
+    ['link', 'unlink', 'image', 'video'],
+    ['code']
   ]
+};
+
+/**
+ * codemirror configuaration
+ */
+export const codeMirrorConfig = {
+  lineNumbers: true,
+  gutter: true,
+  lineWrapping: true,
+  mode: 'htmlmixed',
+  autofocus: true,
+  htmlMode: true
 };

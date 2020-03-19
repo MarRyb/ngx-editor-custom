@@ -161,6 +161,11 @@ export class NgxEditorComponent implements OnInit, ControlValueAccessor {
    * @param commandName name of the command to be executed
    */
   executeCommand(commandName: string): void {
+    if (commandName === 'refresh') {
+      const value = this.textArea.nativeElement.innerHTML;
+      this.onContentChange(value);
+      return;
+    }
     if (commandName === 'code') {
       this.toggleCodeEditor();
       return;

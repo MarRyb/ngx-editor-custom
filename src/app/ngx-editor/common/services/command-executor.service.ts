@@ -182,6 +182,7 @@ export class CommandExecutorService {
    * @param where where the color has to be inserted either text/background
    */
   insertColor(color: string): void {
+    // debugger
     if (this.savedSelection) {
       const restored = Utils.restoreSelection(this.savedSelection);
       if (restored && this.checkSelection()) {
@@ -198,24 +199,15 @@ export class CommandExecutorService {
    * @param fontSize font-size to be set
    */
   setFontSize(fontSize: string): void {
-    if (this.savedSelection && this.checkSelection()) {
-      const deletedValue = this.deleteAndGetElement();
-
-      if (deletedValue) {
-        const restored = Utils.restoreSelection(this.savedSelection);
-
-        if (restored) {
-          if (this.isNumeric(fontSize)) {
-            const fontPx = '<span style="font-size: ' + fontSize + 'px;">' + deletedValue + '</span>';
-            this.insertHtml(fontPx);
-          } else {
-            const fontPx = '<span style="font-size: ' + fontSize + ';">' + deletedValue + '</span>';
-            this.insertHtml(fontPx);
-          }
-        }
+    Utils.restoreSelection(this.savedSelection);
+    this.checkSelection();
+    document.execCommand('fontSize', false, '20');
+    let fontElements = document.getElementsByTagName('font');
+    for (var i = 0, len = fontElements.length; i < len; ++i) {
+      if (fontElements[i].size === '7') {
+        fontElements[i].removeAttribute("size");
+        fontElements[i].style.fontSize = fontSize + 'px';
       }
-    } else {
-      throw new Error('Range out of the editor');
     }
   }
 
@@ -225,25 +217,9 @@ export class CommandExecutorService {
    * @param fontName font-family to be set
    */
   setFontName(fontName: string): void {
-    if (this.savedSelection && this.checkSelection()) {
-      const deletedValue = this.deleteAndGetElement();
-
-      if (deletedValue) {
-        const restored = Utils.restoreSelection(this.savedSelection);
-
-        if (restored) {
-          if (this.isNumeric(fontName)) {
-            const fontFamily = '<span style="font-family: ' + fontName + 'px;">' + deletedValue + '</span>';
-            this.insertHtml(fontFamily);
-          } else {
-            const fontFamily = '<span style="font-family: ' + fontName + ';">' + deletedValue + '</span>';
-            this.insertHtml(fontFamily);
-          }
-        }
-      }
-    } else {
-      throw new Error('Range out of the editor');
-    }
+    Utils.restoreSelection(this.savedSelection);
+    this.checkSelection();
+    document.execCommand('fontName', false, fontName);
   }
 
   /** insert HTML */
@@ -270,7 +246,6 @@ export class CommandExecutorService {
 
     if (this.savedSelection) {
       slectedText = this.savedSelection.toString();
-      debugger
       this.savedSelection.deleteContents();
       return slectedText;
     }

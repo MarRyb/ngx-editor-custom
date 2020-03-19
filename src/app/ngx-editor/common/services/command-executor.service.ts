@@ -202,10 +202,11 @@ export class CommandExecutorService {
     Utils.restoreSelection(this.savedSelection);
     this.checkSelection();
     document.execCommand('fontSize', false, '20');
-    let fontElements = document.getElementsByTagName('font');
-    for (var i = 0, len = fontElements.length; i < len; ++i) {
-      if (fontElements[i].size === '7') {
-        fontElements[i].removeAttribute("size");
+    const fontElements = document.getElementsByTagName('font');
+    for (let i = 0, len = fontElements.length; i < len; ++i) {
+      const size = fontElements[i].getAttribute('size');
+      if (size === '7') {
+        fontElements[i].removeAttribute('size');
         fontElements[i].style.fontSize = fontSize + 'px';
       }
     }

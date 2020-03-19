@@ -146,6 +146,9 @@ export class CommandExecutorService {
    * @param params parameters that holds the information for the link
    */
   createLink(params: any): void {
+    if (!params.urlText) {
+      params.urlText = this.deleteAndGetElement();
+    }
     if (this.savedSelection) {
       /**
        * check whether the saved selection contains a range or plain selection
@@ -267,6 +270,7 @@ export class CommandExecutorService {
 
     if (this.savedSelection) {
       slectedText = this.savedSelection.toString();
+      debugger
       this.savedSelection.deleteContents();
       return slectedText;
     }

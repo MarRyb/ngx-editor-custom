@@ -91,7 +91,7 @@ export class NgxEditorToolbarComponent implements OnInit {
     this.urlForm = this._formBuilder.group({
       urlLink: ['', [Validators.required]],
       urlText: [''],
-      urlNewTab: [true]
+      urlNewTab: [false]
     });
   }
 

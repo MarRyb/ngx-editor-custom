@@ -146,14 +146,14 @@ export class CommandExecutorService {
    * @param params parameters that holds the information for the link
    */
   createLink(params: any): void {
-    if (!params.urlText) {
-      params.urlText = this.deleteAndGetElement();
-    }
     if (this.savedSelection) {
       /**
        * check whether the saved selection contains a range or plain selection
        */
       if (params.urlNewTab) {
+        if (!params.urlText) {
+          params.urlText = this.deleteAndGetElement();
+        }
         const newUrl = '<a href="' + params.urlLink + '" target="_blank">' + params.urlText + '</a>';
 
         if (document.getSelection().type !== 'Range') {

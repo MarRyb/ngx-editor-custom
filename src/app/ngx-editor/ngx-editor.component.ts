@@ -80,6 +80,8 @@ export class NgxEditorComponent implements OnInit, ControlValueAccessor {
   /** emits `focus` event when focused in to the textarea */
   @Output() focus: EventEmitter<string> = new EventEmitter<string>();
 
+  @Output() chooseImageGallery: EventEmitter<any> = new EventEmitter();
+
   @ViewChild('ngxTextArea') textArea: any;
   @ViewChild('ngxCodeEditor') codeEditor: any;
   @ViewChild('ngxWrapper') ngxWrapper: any;
@@ -294,5 +296,9 @@ export class NgxEditorComponent implements OnInit, ControlValueAccessor {
     this.height = this.height || this.textArea.nativeElement.offsetHeight;
 
     this.executeCommand('enableObjectResizing');
+  }
+
+  chooseImageGalleryTest(event) {
+    this.chooseImageGallery.emit(event);
   }
 }

@@ -20,4 +20,8 @@ export class AppComponent {
   };
 
   htmlContent = '';
+
+  test(event) {
+    event.test('https://cdn.contactatonce.com/agent/vsa/caovsa_033.jpg');
+  }
 }

@@ -186,7 +186,8 @@
       <div *ngIf="!isImageUploader; else imageUploder"> </div>
       <ng-template #imageUploder>
         <div class="ngx-insert-img-ph">
-          <p *ngIf="uploadComplete">Choose Image</p>
+          <p (click)="chooseImageFromGallery()">Choose image</p>
+          <!-- <p *ngIf="uploadComplete">Choose Image</p>
           <p *ngIf="!uploadComplete">
             <span>Uploading Image</span>
             <br>
@@ -194,7 +195,7 @@
           </p>
           <div class="ngxe-img-upl-frm">
             <input type="file" (change)="onFileChange($event)" accept="image/*" [disabled]="isUploading" [style.cursor]="isUploading ? 'not-allowed': 'allowed'">
-          </div>
+          </div> -->
         </div>
       </ng-template>
       <ng-template #insertImageLink>

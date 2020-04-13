@@ -63,7 +63,7 @@ export class NgxEditorToolbarComponent implements OnInit {
    * Emits an event when a toolbar button is clicked
    */
   @Output() execute: EventEmitter<string> = new EventEmitter<string>();
-
+  @Output() chooseImageGallery: EventEmitter<any> = new EventEmitter();
 
 
   /**
@@ -236,5 +236,22 @@ export class NgxEditorToolbarComponent implements OnInit {
     this.buildUrlForm();
     this.buildImageForm();
     this.buildVideoForm();
+  }
+
+  test(imageUrl) {
+    try {
+      this._commandExecutorService.insertImage(imageUrl);
+    } catch (error) {
+      this._messageService.sendMessage(error.message);
+    }
+
+    /** reset form to default */
+    this.buildImageForm();
+    /** close inset URL pop up */
+    this.imagePopover.hide();
+  }
+
+  chooseImageFromGallery() {
+    this.chooseImageGallery.emit(this);
   }
 }

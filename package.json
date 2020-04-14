@@ -1,6 +1,6 @@
 {
   "name": "ngx-editor-custom",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "WYSIWYG Editor for Angular Applications",
   "license": "MIT",
   "scripts": {

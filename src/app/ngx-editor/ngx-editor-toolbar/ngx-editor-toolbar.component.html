@@ -185,8 +185,8 @@
       <div *ngIf="isImageUploader; else insertImageLink"> </div>
       <div *ngIf="!isImageUploader; else imageUploder"> </div>
       <ng-template #imageUploder>
-        <div class="ngx-insert-img-ph">
-          <p (click)="chooseImageFromGallery()">Choose image</p>
+        <div class="ngx-insert-img-ph" (click)="chooseImageFromGallery()">
+          <p>Choose image</p>
           <!-- <p *ngIf="uploadComplete">Choose Image</p>
           <p *ngIf="!uploadComplete">
             <span>Uploading Image</span>

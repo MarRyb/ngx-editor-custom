@@ -238,20 +238,16 @@ export class NgxEditorToolbarComponent implements OnInit {
     this.buildVideoForm();
   }
 
-  test(imageUrl) {
+  insertImageFromLibrary(imageUrl) {
     try {
       this._commandExecutorService.insertImage(imageUrl);
     } catch (error) {
       this._messageService.sendMessage(error.message);
     }
-
-    /** reset form to default */
-    this.buildImageForm();
-    /** close inset URL pop up */
-    this.imagePopover.hide();
   }
 
   chooseImageFromGallery() {
+    this.imagePopover.hide();
     this.chooseImageGallery.emit(this);
   }
 }

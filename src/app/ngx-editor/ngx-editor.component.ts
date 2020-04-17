@@ -298,7 +298,7 @@ export class NgxEditorComponent implements OnInit, ControlValueAccessor {
     this.executeCommand('enableObjectResizing');
   }
 
-  chooseImageGalleryTest(event) {
+  chooseImageGalleryFunc(event) {
     this.chooseImageGallery.emit(event);
   }
 }

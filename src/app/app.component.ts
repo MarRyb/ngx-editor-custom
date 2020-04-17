@@ -21,7 +21,7 @@ export class AppComponent {
 
   htmlContent = '';
 
-  test(event) {
+  chooseImageGallery(event) {
     event.insertImageFromLibrary('https://cdn.contactatonce.com/agent/vsa/caovsa_033.jpg');
   }
 }

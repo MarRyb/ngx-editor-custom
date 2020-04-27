@@ -48,6 +48,7 @@ export class CommandExecutorService {
       if (imageURI) {
         const restored = Utils.restoreSelection(this.savedSelection);
         if (restored) {
+          console.log('insert image', imageURI);
           const inserted = document.execCommand('insertImage', false, imageURI);
           if (!inserted) {
             throw new Error('Invalid URL');
